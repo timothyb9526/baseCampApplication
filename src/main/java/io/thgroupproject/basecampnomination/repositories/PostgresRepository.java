@@ -21,7 +21,7 @@ public class PostgresRepository{
             jdbc = jdbtemplate;
         }
 
-        public void save(Student student) {
+        public void saveStudent(Student student) {
             student.id = UUID.randomUUID();
 
             jdbc.update("INSERT INTO students (id, StudentName, SchoolDistrict, Age, PhoneNumber, gradDate, Aptitude, workEthic, passion, interviewDate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", student.id, student.StudentName,
@@ -33,7 +33,7 @@ public class PostgresRepository{
                     this::mapRowToStory, id));
         }
 
-        public List<Student> findAll() {
+    public List<Student> findAll() {
             return jdbc.query("SELECT id, StudentName, SchoolDistrict, Age, PhoneNumber, gradDate, Aptitude, workEthic, passion, interviewDate FROM students", this::mapRowToStory);
         }
 

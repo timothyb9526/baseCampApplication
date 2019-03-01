@@ -13,21 +13,96 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <noscript>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/noscript.css" /></noscript>
-    <style>
-
-    </style>
 </head>
+<style>
+    #nav {
+        background-color: #3b1b0C;
+        color: #999898;
+    }
+    #image {
+        vertical-align: middle;
+    }
+    img {
+        width: 100%;
+    }
+    .container-lg {
+        background-image: url("https://basecampcodingacademy.org/images/header-background.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .nav-link {
+        color: #999898;
+    }
+    li {
+        list-style: none;
+    }
+</style>
 
 <body>
+<nav id="nav" class="navbar navbar-expand-lg sticky-top">
+    <div class="container collapse navbar-collapse" id="navbarSupportedContent">
+        <ul id="list" class="navbar-nav mr-auto">
 
+            <li class="nav-item mr-auto">
+                <h1>Welcome Mr.Sean</h1>
+            </li>
+            <li class="nav-item mr-auto ml-5">
+                <h3><a class="nav-link" href="/">Home</a></h3>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-lg">
+    <div class="col-12 row">
+
+        <a class="my-5 mx-auto" href="#"><img id="image" src="https://files.slack.com/files-pri/T1K15MV0X-FGK0DTZEV/header-logo.png" ></a>
+
+    </div>
+</div>
+
+    <div class="container">
+        <h1 class="mt-2">List of Current Applicants</h1>
+
+
+    <input class="input-group" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+
+
+    <ul id="myUL">
     {{#students}}
-    <div id="">
-        <h1><a href="/{{id}}">{{StudentName}}</a></h1>
-        <h2><a href="/{{id}}">{{SchoolDistrict}}</a></h2>
+    <div id="students" class="container">
+
+        <h4><li><a href="/{{id}}">{{StudentName}},{{SchoolDistrict}}</a></li></h4>
+
     </div>
     {{/students}}
+    </ul>
+    </div>
 </body>
+<script>
+function myFunction() {
+
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
+
+
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
 </html>

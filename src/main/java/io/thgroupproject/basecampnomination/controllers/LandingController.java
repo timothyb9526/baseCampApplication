@@ -2,8 +2,6 @@ package io.thgroupproject.basecampnomination.controllers;
 
 import io.thgroupproject.basecampnomination.modal.Student;
 import io.thgroupproject.basecampnomination.repositories.PostgresRepository;
-import io.thgroupproject.basecampnomination.repositories.Repository;
-import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,7 +35,7 @@ public class LandingController {
 
     @PostMapping("/2")
     public String index(Student student) {
-        studentRepository.save(student);
+        studentRepository.saveStudent(student);
         return "studentQuestions";
     }
 
@@ -64,6 +62,18 @@ public class LandingController {
     public String thankYou() {
         return "thankYou";
     }
+
+    @GetMapping("/")
+    public String home(){
+        return "Home";
+    }
+
+    @GetMapping("/about")
+    public String about() {
+        return "about";
+    }
+
+
 
 
 }

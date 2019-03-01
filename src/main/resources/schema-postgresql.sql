@@ -1,12 +1,20 @@
 CREATE TABLE IF NOT EXISTS students (
-    id UUID PRIMARY KEY NOT NULL,
-    StudentName TEXT NOT NULL,
-    SchoolDistrict TEXT NOT NULL,
-    Age INTEGER NOT NULL,
-    PhoneNumber TEXT NOT NULL,
-    gradDate DATE NOT NULL,
-    Aptitude TEXT NOT NULL,
-    workEthic TEXT NOT NULL,
-    passion TEXT NOT NULL,
-    interviewDate DATE NOT NULL
+    id UUID PRIMARY KEY,
+    StudentName TEXT,
+    SchoolDistrict TEXT,
+    Age INTEGER,
+    PhoneNumber TEXT,
+    gradDate DATE,
+    Aptitude TEXT,
+    workEthic TEXT ,
+    passion TEXT,
+    interviewDate DATE
+);
+
+
+
+CREATE TABLE IF NOT EXISTS nonEligible (
+    id UUID PRIMARY KEY,
+    StudentName TEXT,
+    SchoolDistrict TEXT
 );
