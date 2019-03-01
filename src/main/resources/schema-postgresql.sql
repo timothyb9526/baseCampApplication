@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS students (
     StudentName TEXT,
     SchoolDistrict TEXT,
     Age INTEGER,
+    Email TEXT,
     PhoneNumber TEXT,
     gradDate DATE,
     Aptitude TEXT,

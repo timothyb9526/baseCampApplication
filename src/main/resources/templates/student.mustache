@@ -12,25 +12,75 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <noscript>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/noscript.css" /></noscript>
 </head>
 
+<style>
+    #nav {
+        background-color: #3b1b0C;
+        color: #999898;
+    }
+    #image {
+        vertical-align: middle;
+    }
+    img {
+        width: 100%;
+    }
+    .container-lg {
+        background-image: url("https://basecampcodingacademy.org/images/header-background.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .nav-link {
+        color: #999898;
+    }
+    li {
+        list-style: none;
+    }
+</style>
+
 <body>
+<nav id="nav" class="navbar navbar-expand-lg sticky-top">
+    <div class="container collapse navbar-collapse" id="navbarSupportedContent">
+        <ul id="list" class="navbar-nav mr-auto">
 
+            <li class="nav-item mr-auto">
+                <h1>Welcome Mr.Sean</h1>
+            </li>
+            <li class="nav-item mr-auto ml-5">
+                <h3><a class="nav-link" href="/">Home</a></h3>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-lg">
+    <div class="col-12 row">
+
+        <a class="my-5 mx-auto" href="#"><img id="image" src="https://files.slack.com/files-pri/T1K15MV0X-FGK0DTZEV/header-logo.png" ></a>
+
+    </div>
+</div>
+
+<div class="container">
 {{#student}}
-    <p>Name: {{StudentName}}</p>
-    <p>High School: {{SchoolDistrict}}</p>
-
-    <p>Students Age: {{Age}}</p>
-    <p>Contact Info: {{PhoneNumber}}</p>
-    <p>When Could We Meet: {{interviewDate}}</p>
-    <p>Expected Graduation Date: {{gradDate}}</p>
-    <p>Aptitude: {{Aptitude}}</p>
-    <p>Work Ethic: {{workEthic}}</p>
-    <p>Passion: {{passion}}</p>
+    <h3>Name: <p>{{StudentName}}</p></h3>
+    <h3>High School: <p>{{SchoolDistrict}}</p></h3>
+    <h3>Students Age: <p>{{Age}}</p></h3>
+    <h3>Contact Info: <p>{{PhoneNumber}}</p></h3>
+    <h3>When Could We Meet: <p>{{interviewDate}}</p></h3>
+    <h3>Expected Graduation Date: <p>{{gradDate}}</p></h3>
+    <h3>Aptitude: <p>{{Aptitude}}</p></h3>
+    <h3>Work Ethic: <p>{{workEthic}}</p></h3>
+    <h3>Passion: <p>{{passion}}</p></h3>
 
 {{/student}}
+</div>
 </body>
+<script>
+
+</script>
 </html>

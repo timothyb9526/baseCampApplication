@@ -62,6 +62,10 @@ public class LandingController {
     public String thankYou() {
         return "thankYou";
     }
+    @PostMapping("/thankYou")
+    public String thankU() {
+        return "thankYou";
+    }
 
     @GetMapping("/")
     public String home(){

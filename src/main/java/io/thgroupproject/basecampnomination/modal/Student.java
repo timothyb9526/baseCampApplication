@@ -28,6 +28,8 @@ public class Student {
     @NotNull
     public Integer Age;
     @NotNull
+    public  String Email;
+    @NotNull
     public String PhoneNumber;
     @NotNull
     public Date gradDate;
@@ -43,6 +45,12 @@ public class Student {
     @NotNull
     public Date interviewDate;
 
+    public void setAge(Integer age) {
+        if (age == null) {
+            Age = 18;
+        }
+    }
+
     public void setGradDate(String dateString) {
 
         try {
@@ -56,6 +64,15 @@ public class Student {
         }
 
     }
+
+//    public void setPhoneNumber(String phone) {
+//        if (validatePhoneNumber(phone)) {
+//            PhoneNumber = phone;
+//        } else {
+//            PhoneNumber = "phone";
+//        }
+//    }
+
     public void setInterviewDate(String dateString) {
 
         try {
@@ -70,14 +87,29 @@ public class Student {
 
     }
 
+//    public static boolean validatePhoneNumber(String phoneNumber){
+//        if (phoneNumber.matches("\\d{10}") | phoneNumber.matches("\\d{7}")){
+//            return true;
+//        }else if (phoneNumber.matches("\\d{3}[-\\.\\s]\\d{3}[-\\.\\s]\\d{4}")){
+//            return true;
+//        }else if (phoneNumber.matches("\\d{3}-\\d{3}-\\d{4}\\s(x| (ext))\\d{3,5}")) {
+//            return true;
+//        } else if (phoneNumber.matches("\\(\\d{3}\\)-\\d{3}-\\d{4}")) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
 
 
-    public Student(UUID id, String StudentName, String schoolDistrict, int age, String phoneNumber, Date gradDate, String Apptitude, String workEthic, String passion, Date interviewDate) {
+
+    public Student(UUID id, String StudentName, String schoolDistrict, int age, String email, String phoneNumber, Date gradDate, String Apptitude, String workEthic, String passion, Date interviewDate) {
 
         this.id = id;
         this.StudentName = StudentName;
         this.SchoolDistrict = schoolDistrict;
         this.Age = age;
+        this.Email = email;
         this.PhoneNumber = phoneNumber;
         this.gradDate = gradDate;
         this.Aptitude = Apptitude;

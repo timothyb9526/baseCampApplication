@@ -11,16 +11,67 @@
     <title>Student Apply</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <noscript>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
         <link rel="stylesheet" href="/css/noscript.css" /></noscript>
 </head>
+<style>
+    #image {
+        vertical-align: middle;
+    }
+    .container-lg {
+        background-image: url("https://basecampcodingacademy.org/images/header-background.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    body{
+        background-color: #E7E6E6;
+    }
+    #card{
+        background-color: white;
+    }
+    label {
+    font-size: 2rem;
+    }
+    .form-control {
+    width: 50%;
+    }
+    form{
+        margin: 3rem;
+        padding: 2rem;
+    }
+    @media only screen and (max-width: 880.5px) {
+        .container{
+            width: 100%;
+            padding: 0px;
+        }
+
+        #card{
+            width: 100%;
+            margin: .5rem;
+            padding: 1rem;
+        }
+        .form-control{
+            width: 80%
+        }
+
+    }
+
+</style>
 
 <body class="is-preload">
 
+<div class="container-lg">
+    <div class="col-12 row">
 
-<form action="/2" method="POST">
+        <a class="my-5 mx-auto" href="#"><img class="w-100" id="image" src="https://files.slack.com/files-pri/T1K15MV0X-FGK0DTZEV/header-logo.png" ></a>
+
+    </div>
+</div>
+<div class="container d-flex justify-content-center" >
+<form class="border rounded border-dark w-65" id="card" action="/thankYou" method="POST">
     <!--<input type="hidden" name="studentName" value="">-->
 <div>
     <div class="form-group">
@@ -28,52 +79,58 @@
         <input class="form-control" required id="StudentName" type="text" name="StudentName" placeholder="What is your name?">
     </div>
     <div class="form-group">
-        <label>School</label>
+        <h3><label>School</label></h3>
         <input class="form-control" required type="text" name="SchoolDistrict" placeholder="What School are you from?">
     </div>
     <div class="form-group">
-        <label>Eligible?</label>
-        <a id="Qbtn" >Yes</a>
+        <h3><label>Email</label></h3>
+        <input class="form-control" required type="email" name="Email" placeholder="Email@.com">
+    </div>
+    <div class="form-group">
+        <h3><label>Eligible?</label></h3>
+        <h6>Are you a high school seanior? Have you been nominated? Do you live in north Mississippi?</h6>
+        <a id="Qbtn" class="btn"><button class="border border-dark rounded btn" >Yes</button></a>
         <!--<input class="form-control" type="radio" name="EligibilityRequirements" value="Yes">-->
         <!--<label>Yes</label>-->
-        <input type="submit">No</input>
+        <button class="border border-dark rounded btn" type="submit" value="No">No</button>
         <!--<input class="form-control" type="radio" name="EligibilityRequirements" value="No">-->
         <!--<label>No</label>-->
     </div>
 </div>
     <div id="newQ" style="display: none;">
             <div class="form-group">
-                <label>Age</label>
-                <input class="form-control" type="number" name="Age">
+                <h3><label>Age</label></h3>
+                <input class="form-control" type="number" name="Age" min="17" max="20">
+            </div>
+
+            <div class="form-group">
+                <h3><label>Phone</label></h3>
+                <input class="form-control" type="text" pattern="^\d{3}-\d{3}-\d{4}$" name="PhoneNumber" placeholder="XXX-XXX-XXXX">
             </div>
             <div class="form-group">
-                <label>Phone</label>
-                <input class="form-control" type="number" name="PhoneNumber">
-            </div>
-            <div class="form-group">
-                <label>Grad. Date</label>
+                <h3><label>Grad. Date</label></h3>
                 <input class="form-control" type="date" name="gradDate">
             </div>
             <div class="form-group">
-                <label>Aptitude</label>
-                <textarea class="form-control" name="Aptitude" placeholder="Please Share a specific example of your dedication and work ethic"></textarea>
+                <h3><label>Aptitude</label></h3>
+                <textarea class="form-control" name="Aptitude" placeholder="Please Share a specific example of your dedication and work ethic."></textarea>
             </div>
             <div class="form-group">
-                <label>Work Ethic</label>
-                <textarea class="form-control" name="WorkEthic" placeholder="Please Share a specific example of your dedication & hard work"></textarea>
+                <h3><label>Work Ethic</label></h3>
+                <textarea class="form-control" name="WorkEthic" placeholder="Please Share a specific example of your dedication & hard work."></textarea>
             </div>
             <div class="form-group">
-                <label>Passion</label>
-                <textarea class="form-control" name="Passion" placeholder="Please tell us about something you are passionate about and have worked hard to achieve"></textarea>
+                <h3><label>Passion</label></h3>
+                <textarea class="form-control" name="Passion" placeholder="Please tell us about something you are passionate about and have worked hard to achieve."></textarea>
             </div>
             <div class="form-group">
-                <label>Interview Date</label>
+                <h3><label>Interview Date</label></h3>
                 <input class="form-control" type="date" name="interviewDate" placeholder="When would be a great time for us to meet?">
             </div>
-                <input type="submit" value="Submit" />
+                <input class="btn border border-dark rounded" type="submit" value="Submit" />
     </div>
 </form>
-
+</div>
 </body>
 <script>
     var btn = document.getElementById("Qbtn");
