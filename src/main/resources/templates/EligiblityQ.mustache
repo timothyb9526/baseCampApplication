@@ -133,32 +133,32 @@
                 </div>
                 <div class="form-group">
                     <h5><label>Age</label></h5>
-                    <input class="form-control" type="number" name="Age" min="17" max="20"/>
+                    <input class="form-control" required type="number" name="Age" min="17" max="20"/>
                 </div>
 
                 <div class="form-group">
-                    <h5><label>Phone</label></h5>
-                    <input class="form-control" type="text" pattern="^\d{3}-\d{3}-\d{4}$" name="PhoneNumber" placeholder="XXX-XXX-XXXX"/>
+                    <h5><label>Phone (XXX-XXX-XXXX)</label></h5>
+                    <input class="form-control" required type="text" pattern="^\d{3}-\d{3}-\d{4}$" name="PhoneNumber" placeholder="XXX-XXX-XXXX"/>
                 </div>
                 <div class="form-group">
                     <h5><label>Grad. Date</label></h5>
-                    <input class="form-control" type="date" name="gradDate"/>
+                    <input class="form-control" required type="date" name="gradDate"/>
                 </div>
                 <div class="form-group">
                     <h5><label>Aptitude</label></h5>
-                    <textarea class="form-control" name="Aptitude" placeholder="Please Share a specific example of your dedication and work ethic."></textarea>
+                    <textarea class="form-control" name="Aptitude" required placeholder="Please Share a specific example of your dedication and work ethic."></textarea>
                 </div>
                 <div class="form-group">
                     <h5><label>Work Ethic</label></h5>
-                    <textarea class="form-control" name="WorkEthic" placeholder="Please Share a specific example of your dedication & hard work."></textarea>
+                    <textarea class="form-control" name="WorkEthic" required placeholder="Please Share a specific example of your dedication & hard work."></textarea>
                 </div>
                 <div class="form-group">
                     <h5><label>Passion</label></h5>
-                    <textarea class="form-control" name="Passion" placeholder="Please tell us about something you are passionate about and have worked hard to achieve."></textarea>
+                    <textarea class="form-control" name="Passion" required placeholder="Please tell us about something you are passionate about and have worked hard to achieve."></textarea>
                 </div>
                 <div class="form-group">
                     <h5><label>Interview Date</label></h5>
-                    <input class="form-control" type="date" name="interviewDate" placeholder="When would be a great time for us to meet?"/>
+                    <input class="form-control" required type="date" name="interviewDate" placeholder="When would be a great time for us to meet?"/>
                 </div>
                 <input class="btn border border-dark rounded" type="submit" value="Submit"/>
             </div>
