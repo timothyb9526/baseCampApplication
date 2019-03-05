@@ -16,6 +16,7 @@ CREATE TABLE IF NOT EXISTS students (
 
 CREATE TABLE IF NOT EXISTS nonEligible (
     id UUID PRIMARY KEY,
-    StudentName TEXT,
-    SchoolDistrict TEXT
+    name TEXT,
+    district TEXT,
+    email TEXT
 );

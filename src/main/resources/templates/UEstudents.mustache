@@ -7,6 +7,7 @@
 -->
 <html>
 
+
 <head>
     <title>Student Apply</title>
     <meta charset="utf-8" />
@@ -17,11 +18,10 @@
         <link rel="stylesheet" href="/css/noscript.css" /></noscript>
 </head>
 <style>
-       #nav {
+    #nav {
         background-color: #3b1b0C;
-
+        color: #999898;
     }
-
     #image {
         vertical-align: middle;
     }
@@ -37,10 +37,10 @@
     .nav-link {
         color: #999898;
     }
-    #info{
-        margin: 1rem 8rem 0rem 8rem;
+    li {
+        list-style: none;
     }
-     @media only screen and (max-width: 880.5px) {
+    @media only screen and (max-width: 880.5px) {
         body{
             width: 100%;
             padding: 0px;
@@ -48,8 +48,8 @@
 
         #info {
             font-size: .8rem;
-            width: 97%;
-            margin: 1rem .5rem 0rem .5rem;
+            width: 100%;
+            margin: 1rem 0rem 0rem 0rem;
         }
 
         #info h1 {
@@ -61,26 +61,28 @@
             margin: 0rem;
 
         }
-        #list {
-            margin: 0rem;
+        #students *{
+            font-size: 1.3rem;
         }
-
 
     }
 </style>
 
-<body class="is-preload">
-
+<body>
 <nav id="nav" class="navbar navbar-expand-lg sticky-top">
     <div class="container collapse navbar-collapse" id="navbarSupportedContent">
         <ul id="list" class="navbar-nav mr-auto">
+
+            <li class="nav-item mr-auto">
+                <h1>Welcome Mr.Sean</h1>
+            </li>
             <li class="nav-item mr-auto ml-5">
                 <h3><a class="nav-link" href="/">Home</a></h3>
             </li>
-
         </ul>
     </div>
 </nav>
+
 <div class="container-lg">
     <div class="col-12 row">
 
@@ -88,14 +90,52 @@
     </div>
 </div>
 
-<div class="container text-center mt-5">
-    <h3>Thank You for signing up for <a href="/">Base Camp Coding Academy</a></h3>
+<div id="info" class="container">
+    <h1 class="mt-2">List of Current Applicants</h1>
+
+
+    <div class="d-flex">
+        <input class="input-group" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+        <a href="/students"><button class="btn border border-dark rounded">Eligible</button></a></div>
+    <ul id="myUL">
+        {{#uestudents}}
+            <div id="students" class="container">
+
+                <h4><li><a href="/applicant/{{id}}" target="_blank">{{name}},  {{district}}</a></li></h4>
+
+            </div>
+        {{/uestudents}}
+    </ul>
 </div>
-
 </body>
+<script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+function myFunction() {
 
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
+
+
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+var count = 0
+var list = document.getElementById("myUL");
+var listItem = list.querySelectorAll('li');
+for (var i=0; i < listItem.length; i++) {
+    listItem[i].setAttribute("id", count += 1);
+    console.log(listItem[i]);
+}
+
+</script>
 </html>

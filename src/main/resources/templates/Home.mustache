@@ -26,6 +26,11 @@
     #image {
         vertical-align: middle;
     }
+
+    #info {
+        margin: 1rem 8rem 0rem 8rem;
+    }
+
     img {
         width: 100%;
     }
@@ -38,12 +43,47 @@
     .nav-link {
         color: #999898;
     }
+
+    @media only screen and (max-width: 880.5px) {
+        body{
+            width: 100%;
+            padding: 0px;
+        }
+
+        #info {
+            font-size: .8rem;
+            width: 97%;
+            margin: 1rem .5rem 0rem .5rem;
+        }
+
+        #info h1 {
+            font-size: 1.3rem;
+        }
+
+        #nav *{
+            font-size: 1rem;
+            margin: 0rem;
+
+        }
+        #list {
+            margin: 0rem;
+            display: flex;
+        }
+        #li{
+            display: flex;
+        }
+
+
+    }
+
+
 </style>
 
 <body>
 <nav id="nav" class="navbar navbar-expand-lg sticky-top">
     <div class="container collapse navbar-collapse" id="navbarSupportedContent">
         <ul id="list" class="navbar-nav mr-auto">
+
             <li class="nav-item active">
                 <h3><a class="nav-link" href="/students">Admin<span class="sr-only">(current)</span></a></h3>
             </li>
@@ -57,11 +97,11 @@
 <div class="container-lg">
 <div class="col-12 row">
 
-    <a class="my-5 mx-auto" href="#"><img id="image" src="https://files.slack.com/files-pri/T1K15MV0X-FGK0DTZEV/header-logo.png" ></a>
+    <a class="my-5 mx-auto" href="#"><img id="image" src="https://basecampcodingacademy.org/images/header-logo.png" ></a>
 
 </div>
 </div>
-<div style="margin: 1rem 8rem 0rem 8rem;">
+<div id="info">
     <h1>
         What is Base Camp Coding Academy
     </h1>
@@ -74,7 +114,7 @@
     <a href="/about">Read more...</a>
 </div>
 <div class="container">
-    <img src="https://files.slack.com/files-pri/T1K15MV0X-FGM5V6MGW/class-of-2019.jpg" alt="#">
+    <img class="img-fluid" src="https://basecampcodingacademy.org/images/class-of-2019.jpg" alt="#">
 </div>
 
 </body>

@@ -8,7 +8,7 @@
 <html>
 
 <head>
-    <title>title</title>
+    <title>Student Application</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/css/main.css" />
@@ -25,6 +25,9 @@
     #image {
         vertical-align: middle;
     }
+    body {
+            background-color: #e7e6e6;
+        }
     img {
         width: 100%;
     }
@@ -40,6 +43,61 @@
     li {
         list-style: none;
     }
+    #info{
+        background-color: white;
+        margin: 2rem auto 0rem auto;
+        width: 50%;
+        padding: 1rem 4rem 4rem 4rem;
+    }
+    #studentInfo {
+        margin: 1rem auto 2rem 0rem;
+    }
+    #contact {
+        margin-top: 1rem;
+    }
+
+    fieldset {
+      display: block;
+      margin-left: 2px;
+      margin-right: 2px;
+      padding-top: 0.35em;
+      padding-bottom: 0.625em;
+      padding-left: 0.75em;
+      padding-right: 0.75em;
+      border: 2px groove;
+      border-radius: 10px;
+    }
+    legend {
+        width: 6rem;
+    }
+    #workEthic {
+        width: 7.5rem;
+    }
+
+    @media only screen and (max-width: 880.5px) {
+        #nav *{
+            font-size: 1rem;
+            margin: 0rem;
+        }
+        body{
+            width: 100%;
+            padding: 0px;
+        }
+        #info{
+            padding: .3rem;
+            margin: .2rem .3rem 0rem .3rem;
+            width: 95%;
+        }
+        h5{
+            font-size: .82rem;
+        }
+        h3{
+            font-size: 1.1rem;
+        }
+
+
+    }
+
 </style>
 
 <body>
@@ -60,27 +118,36 @@
 <div class="container-lg">
     <div class="col-12 row">
 
-        <a class="my-5 mx-auto" href="#"><img id="image" src="https://files.slack.com/files-pri/T1K15MV0X-FGK0DTZEV/header-logo.png" ></a>
-
+        <a class="my-5 mx-auto" href="#"><img id="image" src="https://basecampcodingacademy.org/images/header-logo.png" ></a>
     </div>
 </div>
 
-<div class="container">
+<div id="info" class="container border border-dark rounded">
 {{#student}}
-    <h3>Name: <p>{{StudentName}}</p></h3>
-    <h3>High School: <p>{{SchoolDistrict}}</p></h3>
-    <h3>Students Age: <p>{{Age}}</p></h3>
-    <h3>Contact Info: <p>{{PhoneNumber}}</p></h3>
-    <h3>When Could We Meet: <p>{{interviewDate}}</p></h3>
-    <h3>Expected Graduation Date: <p>{{gradDate}}</p></h3>
-    <h3>Aptitude: <p>{{Aptitude}}</p></h3>
-    <h3>Work Ethic: <p>{{workEthic}}</p></h3>
-    <h3>Passion: <p>{{passion}}</p></h3>
-
+    <div class="d-flex">
+        <div id="studentInfo">
+            <h3><p>{{StudentName}}, {{Age}}</p></h3>
+            <h5><p>{{SchoolDistrict}}, School District</p></h5>
+            <!--<h3><p></p></h3>-->
+        </div>
+        <div id="contact">
+            <h5><p>Phone: {{PhoneNumber}}</p></h5>
+            <h5><p>BCCA Meeting: {{interviewDate}}</p></h5>
+            <h5><p>Grad. Date: {{gradDate}}</p></h5>
+        </div>
+    </div>
+    <fieldset><legend>Aptitude</legend><p>{{Aptitude}}</p></fieldset>
+    <fieldset><legend id="workEthic">Work Ethic</legend><p>{{workEthic}}</p></fieldset>
+    <fieldset><legend>Passion</legend><p>{{passion}}</p></fieldset>
 {{/student}}
 </div>
 </body>
 <script>
-
+    <!--var strings = document.querySelectorAll('h3');-->
+    <!--for (var i = 0; i < strings.length; i++){-->
+        <!--if (strings[i] == null) {-->
+            <!--console.log(strings[i])-->
+        <!--}-->
+    <!--}-->
 </script>
 </html>

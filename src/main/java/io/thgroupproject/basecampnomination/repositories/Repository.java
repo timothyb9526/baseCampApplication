@@ -9,5 +9,5 @@ public interface Repository<T> {
 
     Optional<T> findById(UUID id);
 
-    void save(T t);
+    void saveStudent(T t);
 }

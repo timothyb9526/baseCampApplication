@@ -1,6 +1,8 @@
 package io.thgroupproject.basecampnomination.controllers;
 
 import io.thgroupproject.basecampnomination.modal.Student;
+import io.thgroupproject.basecampnomination.modal.UEstudents;
+import io.thgroupproject.basecampnomination.repositories.UEstudentRepository;
 import io.thgroupproject.basecampnomination.repositories.PostgresRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,29 +21,33 @@ import java.util.UUID;
 public class LandingController {
 
     PostgresRepository studentRepository;
+    UEstudentRepository UErepository;
+
 
     @Autowired
-    public LandingController(PostgresRepository repository) {
+    public LandingController(PostgresRepository repository, UEstudentRepository uerepository){
         studentRepository = repository;
+        UErepository = uerepository;
+
 
     }
 
 
     @GetMapping("/2")
     public String next() {
-        return "studentQuestions";
+        return "EligiblityQ";
 
     }
 
     @PostMapping("/2")
-    public String index(Student student) {
-        studentRepository.saveStudent(student);
+    public String index() {
         return "studentQuestions";
     }
 
     @GetMapping("/{uuid}")
     public String student(Model model, @PathVariable(value = "uuid") UUID uuid) {
         Optional<Student> student = studentRepository.findById(uuid);
+
 
         if (student.isPresent()) {
             model.addAttribute("student", student.get());
@@ -52,18 +58,24 @@ public class LandingController {
 
     }
 
+
+
     @GetMapping("/students")
     public String students(Model model) {
         model.addAttribute("students", studentRepository.findAll());
         return "students";
     }
 
+
+
     @GetMapping("/thankYou")
     public String thankYou() {
         return "thankYou";
     }
     @PostMapping("/thankYou")
-    public String thankU() {
+    public String thankU(Student student) {
+        studentRepository.saveStudent(student);
+
         return "thankYou";
     }
 
@@ -78,6 +90,37 @@ public class LandingController {
     }
 
 
+
+    @GetMapping("/applicant/{uuid}")
+    public String applicant(Model model, @PathVariable(value = "uuid") UUID uuid) {
+        Optional<UEstudents> applicant = UErepository.findById(uuid);
+
+
+        if (applicant.isPresent()) {
+            model.addAttribute("uestudent", applicant.get());
+            return "UEstudent";
+        } else {
+            return "UEstudent";
+        }
+
+    }
+
+    @GetMapping("/noneligible")
+    public String eligibility(Model model) {
+        model.addAttribute("uestudents", UErepository.findAll());
+        return "UEstudents";
+    }
+
+    @GetMapping("/end")
+    public String thanksU(){
+        return "thankYou";
+    }
+
+    @PostMapping("/end")
+    public String thanks(UEstudents uestudents){
+        UErepository.saveStudent(uestudents);
+        return "thankYou";
+    }
 
 
 }

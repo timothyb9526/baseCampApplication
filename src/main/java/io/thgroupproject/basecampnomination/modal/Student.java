@@ -45,11 +45,14 @@ public class Student {
     @NotNull
     public Date interviewDate;
 
-    public void setAge(Integer age) {
-        if (age == null) {
-            Age = 18;
-        }
-    }
+//    public void setAge(Integer age) {
+//        if (age == null) {
+//            Age = 18;
+//        }
+//    }
+
+
+
 
     public void setGradDate(String dateString) {
 

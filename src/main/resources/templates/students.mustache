@@ -40,6 +40,35 @@
     li {
         list-style: none;
     }
+
+    @media only screen and (max-width: 880.5px) {
+        body{
+            width: 100%;
+            padding: 0px;
+        }
+
+        #info {
+            font-size: .8rem;
+            width: 100%;
+            margin: 1rem 0rem 0rem 0rem;
+        }
+
+        #info h1 {
+            font-size: 1.3rem;
+        }
+
+        #nav *{
+            font-size: 1rem;
+            margin: 0rem;
+
+        }
+        #students *{
+            font-size: 1.3rem;
+        }
+
+    }
+
+
 </style>
 
 <body>
@@ -57,32 +86,30 @@
     </div>
 </nav>
 
-<div class="container-lg">
+<div  class="container-lg">
     <div class="col-12 row">
 
-        <a class="my-5 mx-auto" href="#"><img id="image" src="https://files.slack.com/files-pri/T1K15MV0X-FGK0DTZEV/header-logo.png" ></a>
-
+        <a class="my-5 mx-auto" href="#"><img id="image" src="https://basecampcodingacademy.org/images/header-logo.png" ></a>
     </div>
 </div>
 
-    <div class="container">
-        <h1 class="mt-2">List of Current Applicants</h1>
+<div id="info"  class="container">
+    <h1 class="mt-2">List of Current Applicants</h1>
 
+    <div class="d-flex">
+        <input class="input-group" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+        <a href="/noneligible"><button class="btn border border-dark rounded">Ineligible</button></a></div>
 
-    <input class="input-group" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+        <ul id="myUL">
+            {{#students}}
+            <div id="students" class="container">
 
+                <h4><li><a href="/{{id}}" target="_blank">{{StudentName}},  {{SchoolDistrict}}</a></li></h4>
 
-
-    <ul id="myUL">
-    {{#students}}
-    <div id="students" class="container">
-
-        <h4><li><a href="/{{id}}">{{StudentName}},  {{SchoolDistrict}}</a></li></h4>
-
-    </div>
-    {{/students}}
-    </ul>
-    </div>
+            </div>
+            {{/students}}
+        </ul>
+</div>
 </body>
 <script>
 
