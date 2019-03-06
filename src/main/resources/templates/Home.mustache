@@ -60,6 +60,10 @@
             font-size: 1.3rem;
         }
 
+        ul li {
+            display: inline;
+        }
+
         #nav *{
             font-size: 1rem;
             margin: 0rem;
@@ -83,6 +87,7 @@
 <nav id="nav" class="navbar navbar-expand-lg sticky-top">
     <div class="container collapse navbar-collapse" id="navbarSupportedContent">
         <ul id="list" class="navbar-nav mr-auto">
+            <div class="d-flex">
 
             <li class="nav-item active">
                 <h3><a class="nav-link" href="/students">Admin<span class="sr-only">(current)</span></a></h3>
@@ -90,7 +95,7 @@
             <li class="nav-item mr-auto ml-5">
                 <h3><a class="nav-link" href="/2">Sign Up</a></h3>
             </li>
-
+            </div>
         </ul>
     </div>
 </nav>

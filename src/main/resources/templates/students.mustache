@@ -40,6 +40,21 @@
     li {
         list-style: none;
     }
+    #myInput{
+        width: 100%;
+    }
+    #info{
+        align-text: center;
+    }
+    #Card{
+        margin: 1rem 0rem 0rem 0rem;
+        Padding: 1rem 3rem 2rem 3rem;
+        background-color: white;
+    }
+    body {
+            background-color: #e7e6e6;
+    }
+
 
     @media only screen and (max-width: 880.5px) {
         body{
@@ -51,6 +66,7 @@
             font-size: .8rem;
             width: 100%;
             margin: 1rem 0rem 0rem 0rem;
+            padding: 0rem;
         }
 
         #info h1 {
@@ -65,6 +81,22 @@
         #students *{
             font-size: 1.3rem;
         }
+        #list h1{
+            font-size: 2rem;
+            padding-left: 2rem;
+        }
+
+        #list h3{
+            padding-left: 6rem;
+        }
+        #Card{
+            width: 95%;
+            margin: 0rem;
+            padding: 1rem .5rem 1rem .5rem;
+        }
+        #info h1{
+            font-size: 1.9rem;
+        }
 
     }
 
@@ -75,13 +107,12 @@
 <nav id="nav" class="navbar navbar-expand-lg sticky-top">
     <div class="container collapse navbar-collapse" id="navbarSupportedContent">
         <ul id="list" class="navbar-nav mr-auto">
-
-            <li class="nav-item mr-auto">
-                <h1>Welcome Mr.Sean</h1>
-            </li>
-            <li class="nav-item mr-auto ml-5">
-                <h3><a class="nav-link" href="/">Home</a></h3>
-            </li>
+                <li class="nav-item mr-auto">
+                    <h1>Welcome Mr.Sean</h1>
+                </li>
+                <li class="nav-item mr-auto ml-5">
+                    <h3><a class="nav-link" href="/">Home</a></h3>
+                </li>
         </ul>
     </div>
 </nav>
@@ -93,12 +124,14 @@
     </div>
 </div>
 
-<div id="info"  class="container">
-    <h1 class="mt-2">List of Current Applicants</h1>
+<div id="info"  class="container d-flex justify-content-center ">
+    <div id="Card" class="border border-dark rounded">
+    <h1 class="mt-2">List of Eligible Applicants</h1>
 
     <div class="d-flex">
         <input class="input-group" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
-        <a href="/noneligible"><button class="btn border border-dark rounded">Ineligible</button></a></div>
+        <a href="/noneligible"><button class="btn border border-dark rounded">Ineligible</button></a>
+    </div>
 
         <ul id="myUL">
             {{#students}}
@@ -109,6 +142,7 @@
             </div>
             {{/students}}
         </ul>
+    </div>
 </div>
 </body>
 <script>

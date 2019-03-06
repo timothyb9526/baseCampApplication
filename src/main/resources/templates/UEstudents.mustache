@@ -40,6 +40,14 @@
     li {
         list-style: none;
     }
+    #Card{
+        margin: 1rem 0rem 0rem 0rem;
+        Padding: 1rem 3rem 2rem 3rem;
+        background-color: white;
+    }
+    body {
+            background-color: #e7e6e6;
+    }
     @media only screen and (max-width: 880.5px) {
         body{
             width: 100%;
@@ -50,6 +58,7 @@
             font-size: .8rem;
             width: 100%;
             margin: 1rem 0rem 0rem 0rem;
+            padding: 0rem;
         }
 
         #info h1 {
@@ -65,6 +74,23 @@
             font-size: 1.3rem;
         }
 
+        #list h1{
+            font-size: 2rem;
+            padding-left: 2rem;
+        }
+
+        #list h3{
+            padding-left: 6rem;
+        }
+        #Card{
+            width: 95%;
+            margin: 0rem;
+            padding: 1rem .5rem 1rem .5rem;
+        }
+        #info h1{
+            font-size: 1.75rem;
+        }
+
     }
 </style>
 
@@ -73,12 +99,12 @@
     <div class="container collapse navbar-collapse" id="navbarSupportedContent">
         <ul id="list" class="navbar-nav mr-auto">
 
-            <li class="nav-item mr-auto">
-                <h1>Welcome Mr.Sean</h1>
-            </li>
-            <li class="nav-item mr-auto ml-5">
-                <h3><a class="nav-link" href="/">Home</a></h3>
-            </li>
+                <li class="nav-item mr-auto">
+                    <h1>Welcome Mr.Sean</h1>
+                </li>
+                <li class="nav-item mr-auto ml-5">
+                    <h3><a class="nav-link" href="/">Home</a></h3>
+                </li>
         </ul>
     </div>
 </nav>
@@ -90,22 +116,25 @@
     </div>
 </div>
 
-<div id="info" class="container">
-    <h1 class="mt-2">List of Current Applicants</h1>
+<div id="info" class="container d-flex justify-content-center">
+    <div id="Card" class="border border-dark rounded">
+        <h1 class="mt-2">List of Ineligible Applicants</h1>
 
 
-    <div class="d-flex">
-        <input class="input-group" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
-        <a href="/students"><button class="btn border border-dark rounded">Eligible</button></a></div>
-    <ul id="myUL">
-        {{#uestudents}}
-            <div id="students" class="container">
+        <div class="d-flex">
+            <input class="input-group" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+            <a href="/students"><button class="btn border border-dark rounded">Eligible</button></a>
+        </div>
+            <ul id="myUL">
+                {{#uestudents}}
+                    <div id="students" class="container">
 
-                <h4><li><a href="/applicant/{{id}}" target="_blank">{{name}},  {{district}}</a></li></h4>
+                        <h4><li><a href="/applicant/{{id}}" target="_blank">{{name}},  {{district}}</a></li></h4>
 
-            </div>
-        {{/uestudents}}
-    </ul>
+                    </div>
+                {{/uestudents}}
+            </ul>
+    </div>
 </div>
 </body>
 <script>

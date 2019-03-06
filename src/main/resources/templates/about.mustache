@@ -41,6 +41,9 @@
     #info{
         margin: 1rem 8rem 0rem 8rem;
     }
+    #about{
+            font-size: 3rem;
+    }
      @media only screen and (max-width: 880.5px) {
         body{
             width: 100%;
@@ -65,6 +68,12 @@
         #list {
             margin: 0rem;
         }
+        h4 {
+            font-size: 1rem;
+        }
+        #about{
+            font-size: 2rem;
+        }
 
 
     }
@@ -75,6 +84,7 @@
 <nav id="nav" class="navbar navbar-expand-lg sticky-top">
     <div class="container collapse navbar-collapse" id="navbarSupportedContent">
         <ul id="list" class="navbar-nav mr-auto">
+            <div class="d-flex">
             <li class="nav-item active mr-5">
                 <h3><a class="nav-link" href="/students">Admin<span class="sr-only">(current)</span></a></h3>
             </li>
@@ -84,7 +94,7 @@
             <li class="nav-item mr-auto ml-5">
                 <h3><a class="nav-link" href="/">Home</a></h3>
             </li>
-
+            </div>
         </ul>
     </div>
 </nav>
@@ -96,9 +106,9 @@
 </div>
 
 <div id="info">
-    <h1>
+    <p id="about">
         About
-    </h1>
+    </p>
     <p>
         Located in Water Valley, MS, Base Camp Coding Academy (BCCA) is a hands-on, challenging and fun program, designed to train students to be software developers in 12 months.
         </p>

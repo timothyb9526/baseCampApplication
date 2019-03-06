@@ -51,6 +51,7 @@ public class LandingController {
 
         if (student.isPresent()) {
             model.addAttribute("student", student.get());
+            model.addAttribute("students", studentRepository.findAll());
             return "student";
         } else {
             return "students";
